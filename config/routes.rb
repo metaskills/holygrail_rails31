@@ -1,5 +1,6 @@
 HolygrailRails31::Application.routes.draw do
-  get "demos_controller/index"
+  
+  resources :demos
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
