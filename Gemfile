@@ -9,5 +9,6 @@ gem 'jquery-rails'
 
 group :test do
   gem 'turn', :require => false
-  gem 'capybara-webkit'
+  gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
+  gem 'capybara-webkit', :git => 'git://github.com/carhartl/capybara-webkit.git'
 end

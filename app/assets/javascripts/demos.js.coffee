@@ -1,4 +1,5 @@
 
 $ -> 
-  $('h1#demoIndex').remove()
+  $('h1#demoIndex').bind 'click', ->
+    $(this).remove()
 
