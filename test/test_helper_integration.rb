@@ -1,12 +1,25 @@
 require "test_helper"
 require "capybara/rails"
 
-class ActionDispatch::IntegrationTest
+Capybara.default_driver = :webkit
+Capybara.server_port = 50420
+
+module ActionDispatch
   
-  include Capybara::DSL
+  module Integration
+    class Session
+      def host
+        '127.0.0.1'
+      end
+      def default_url_options
+        { :protocol => https? ? "https" : "http", :host => host, :port => 50420 }
+      end
+    end
+  end
   
-  Capybara.default_driver = :webkit
-  
+  class IntegrationTest
+    include Capybara::DSL
+  end
   
   
 end
