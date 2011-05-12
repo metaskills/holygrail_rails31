@@ -12,7 +12,7 @@ module ActionDispatch
         '127.0.0.1'
       end
       def default_url_options
-        { :protocol => https? ? "https" : "http", :host => host, :port => 50420 }
+        { :protocol => https? ? "https" : "http", :host => host, :port => Capybara.server_port }
       end
     end
   end
