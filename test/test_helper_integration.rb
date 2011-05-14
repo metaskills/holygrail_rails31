@@ -6,6 +6,7 @@ Capybara.server_port = 50420
 
 module ActionDispatch
   
+  # If you want to be persnikity about host/port matching backend webkit_server.
   module Integration
     class Session
       def host
@@ -19,8 +20,14 @@ module ActionDispatch
   
   class IntegrationTest
     include Capybara::DSL
+  end  
+  
+end
+
+# If you want to use transitional fixtures and force all threads to 1 DB connection.
+class ActiveRecord::Base
+  def self.connection
+    @@shared_connection ||= retrieve_connection
   end
-  
-  
 end
 
