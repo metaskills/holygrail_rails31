@@ -1,14 +1,16 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.beta1'
+gem 'rails', '3.1.0'
 gem 'sqlite3'
-gem 'sass'
-gem 'coffee-script'
-gem 'uglifier'
+group :assets do
+  gem 'sass-rails', "  ~> 3.1.0"
+  gem 'coffee-rails', "~> 3.1.0"
+  gem 'uglifier'
+end
 gem 'jquery-rails'
 
 group :test do
   gem 'turn', :require => false
-  gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
-  gem 'capybara-webkit', :git => 'git://github.com/carhartl/capybara-webkit.git'
+  gem 'capybara'
+  gem 'capybara-webkit'
 end
