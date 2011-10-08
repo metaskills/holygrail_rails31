@@ -132,7 +132,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  capybara
   capybara-webkit
   coffee-rails (~> 3.1.0)
   jquery-rails
